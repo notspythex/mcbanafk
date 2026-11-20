@@ -1,0 +1,102 @@
+{
+  "autoStart": true,
+  "server": {
+    "host": "bananasmp.net",
+    "port": 25565,
+    "version": "auto",
+    "auth": "offline"
+  },
+  "bots": [
+    "SpyGotMace",
+    "btw_iamspy",
+    "spythex_00",
+    "ik_urnoob28"
+  ],
+  "login": {
+    "password": "CHANGE_ME",
+    "command": "/login",
+    "readyDelaySeconds": 4,
+    "promptWaitSeconds": 8,
+    "timeoutSeconds": 10,
+    "requireConfirmation": false,
+    "promptPatterns": [
+      "/login",
+      "please log in",
+      "please login",
+      "login with"
+    ],
+    "successPatterns": [
+      "successfully logged",
+      "logged in",
+      "login successful",
+      "authenticated",
+      "welcome back"
+    ],
+    "failurePatterns": [
+      "wrong password",
+      "incorrect password",
+      "invalid password",
+      "password is incorrect"
+    ],
+    "registerPatterns": [
+      "/register",
+      "please register",
+      "not registered"
+    ],
+    "resendAfterSeconds": 6,
+    "maxSends": 2
+  },
+  "destination": {
+    "server": "randomkits",
+    "command": "/server randomkits",
+    "timeoutSeconds": 30,
+    "settleSeconds": 3,
+    "confirmPatterns": [],
+    "failurePatterns": [
+      "could not connect",
+      "unknown server",
+      "no such server",
+      "already connected",
+      "server is offline",
+      "server is full"
+    ]
+  },
+  "connection": {
+    "connectTimeoutSeconds": 30,
+    "startStaggerSeconds": 6,
+    "logChat": true,
+    "blockedPatterns": [
+      "proxy",
+      "vpn",
+      "anti-bot",
+      "antibot",
+      "vpn/proxy"
+    ]
+  },
+  "reconnect": {
+    "enabled": true,
+    "delaySeconds": 15,
+    "backoffFactor": 2,
+    "maxDelaySeconds": 300,
+    "maxAttempts": 0,
+    "stableSeconds": 120,
+    "jitterPercent": 10
+  },
+  "dashboard": {
+    "enabled": true,
+    "port": "auto",
+    "host": "0.0.0.0",
+    "pin": "CHANGE_ME"
+  },
+  "antiVpnFallback": {
+    "enabled": false,
+    "host": "",
+    "port": 25565,
+    "socksProxy": {
+      "host": "",
+      "port": 1080,
+      "username": "",
+      "password": ""
+    }
+  }
+}

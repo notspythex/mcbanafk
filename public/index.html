@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bot manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="gate" class="gate" hidden>
+    <form id="gateForm" class="gate-box" autocomplete="off">
+      <h1>Bot manager</h1>
+      <label for="pin">Dashboard PIN</label>
+      <input id="pin" type="password" inputmode="text" autocomplete="current-password" required>
+      <button class="btn primary" type="submit">Sign in</button>
+      <p id="gateError" class="err" role="alert"></p>
+    </form>
+  </div>
+
+  <main id="app" hidden>
+    <header class="top">
+      <div>
+        <h1>Bot manager</h1>
+        <p id="serverInfo" class="muted">Loading server details</p>
+      </div>
+      <div class="top-right">
+        <span id="link" class="pill pill-off">Dashboard offline</span>
+        <button id="signOut" class="btn small" type="button">Sign out</button>
+      </div>
+    </header>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <section class="bar" aria-label="Group controls">
+      <button class="btn primary" data-all="start">Start all</button>
+      <button class="btn danger" data-all="stop">Stop all</button>
+      <button class="btn" data-all="restart">Restart all</button>
+      <span id="summary" class="muted"></span>
+    </section>
+
+    <section id="bots" class="bots" aria-label="Bots"></section>
+
+    <section class="console" aria-label="Console">
+      <div class="console-head">
+        <h2>Console</h2>
+        <label class="inline">Show
+          <select id="filter"><option value="">All bots</option></select>
+        </label>
+        <label class="inline"><input id="follow" type="checkbox" checked> Follow</label>
+      </div>
+      <div id="log" class="log" role="log" aria-live="off"></div>
+      <form id="cmdForm" class="cmd" autocomplete="off">
+        <select id="cmdBot" aria-label="Send as"></select>
+        <input id="cmdText" type="text" maxlength="256" placeholder="Message or /command" aria-label="Message or command">
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+      <p id="cmdError" class="err" role="alert"></p>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
